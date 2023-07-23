@@ -8,6 +8,10 @@ a[role="treeitem"] {
   padding-block: 8px;
 }
 
+a[role="treeitem"][aria-selected="true"] {
+  font-weight: 600;
+}
+
 li {
   padding-block: 8px;
 }
