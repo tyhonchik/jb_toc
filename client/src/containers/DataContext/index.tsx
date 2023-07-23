@@ -28,7 +28,7 @@ export const DataProvider = ({ children }: PropsWithChildren) => {
     setLoading(true);
     setError(undefined);
     try {
-      const response = await fetch("http://localhost:5000/api/data");
+      const response = await fetch(`${import.meta.env.VITE_API_HOST}/api/data`);
       if (!response.ok) {
         throw new Error("Failed to fetch data");
       }

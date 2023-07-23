@@ -1,7 +1,9 @@
-import { FC, useState } from "react";
+import { FC, useContext, useState } from "react";
 
+import { DataContext } from "@/containers/DataContext";
 import { IApiResponse, TPage } from "@/types";
 
+import TableOfContentsPlaceholder from "./Placeholder";
 import styles from "./TableOfContents.module.css";
 
 interface IPageItemProps {
@@ -24,8 +26,6 @@ const PageItem: FC<IPageItemProps> = ({ id, pages }) => {
 
   const isExpandable = !!page.pages;
   const levelMargin = (page.level + 1) * 16 + 32;
-
-  console.log(levelMargin);
 
   return (
     <li role="none">
@@ -63,7 +63,11 @@ interface ITocProps {
   data?: IApiResponse;
 }
 
-export const TableOfContents: FC<ITocProps> = ({ data }) => {
+export const TableOfContents: FC<ITocProps> = () => {
+  const { data, loading } = useContext(DataContext);
+
+  if (loading) return <TableOfContentsPlaceholder />;
+
   if (!data) return null;
   const {
     entities: { pages },
@@ -71,12 +75,10 @@ export const TableOfContents: FC<ITocProps> = ({ data }) => {
   } = data;
 
   return (
-    <div>
-      <ul className={styles.tree} role="tree">
-        {topLevelIds.map(id => (
-          <PageItem key={id} id={id} pages={pages} />
-        ))}
-      </ul>
-    </div>
+    <ul className={styles.tree} role="tree">
+      {topLevelIds.map(id => (
+        <PageItem key={id} id={id} pages={pages} />
+      ))}
+    </ul>
   );
 };
