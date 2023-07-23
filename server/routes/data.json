@@ -14,6 +14,7 @@
           "NetBeans",
           "product__educational_tools"
         ],
+        "anchors": ["Getting_started_anchor_1"],
         "id": "Getting_started",
         "title": "Getting started",
         "url": "getting-started.html",
@@ -25,6 +26,7 @@
         "id": "Accessibility",
         "title": "Accessibility",
         "url": "accessibility.html",
+        "anchors": ["Accessibility_anchor_1", "Accessibility_anchor_2"],
         "parentId": "Getting_started",
         "level": 1,
         "tabIndex": 0
@@ -36,6 +38,7 @@
           "Getting_Help"
         ],
         "id": "Discover_IntelliJ_IDEA",
+        "anchors": ["Discover_IntelliJ_IDEA_anchor_1"],
         "title": "IntelliJ IDEA overview",
         "url": "discover-intellij-idea.html",
         "parentId": "Getting_started",
@@ -14055,6 +14058,36 @@
         "parentId": "acd00c1",
         "level": 1,
         "tabIndex": 5
+      }
+    },
+    "anchors": {
+      "Getting_started_anchor_1": {
+        "id": "Getting_started_anchor_1",
+        "title": "Introduction to Getting started",
+        "url": "getting-started.html",
+        "anchor": "#introduction",
+        "level": 1
+      },
+      "Accessibility_anchor_1": {
+        "id": "Accessibility_anchor_1",
+        "title": "Basics of Accessibility",
+        "url": "accessibility.html",
+        "anchor": "#basics1",
+        "level": 1
+      },
+      "Accessibility_anchor_2": {
+        "id": "Accessibility_anchor_2",
+        "title": "Basics of Accessibility",
+        "url": "accessibility.html",
+        "anchor": "#basics2",
+        "level": 1
+      },
+      "Discover_IntelliJ_IDEA_anchor_1": {
+        "id": "Discover_IntelliJ_IDEA_anchor_1",
+        "title": "Discovering IntelliJ IDEA",
+        "url": "discover-intellij-idea.html",
+        "anchor": "#discovering",
+        "level": 1
       }
     }
   },
