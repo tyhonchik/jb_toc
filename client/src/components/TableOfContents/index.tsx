@@ -68,7 +68,10 @@ const PageItem: FC<IPageItemProps> = ({ id, pages, anchors }) => {
   const itemRef = React.useRef<HTMLAnchorElement>(null);
   useEffect(() => {
     if (isSelected && itemRef.current) {
-      itemRef.current.scrollIntoView({ behavior: "smooth" });
+      const rect = itemRef.current.getBoundingClientRect();
+      if (!(rect.top >= 0 && rect.bottom <= window.innerHeight)) {
+        itemRef.current.scrollIntoView({ behavior: "smooth" });
+      }
     }
   }, [isSelected, itemRef]);
 
@@ -78,9 +81,7 @@ const PageItem: FC<IPageItemProps> = ({ id, pages, anchors }) => {
     event.preventDefault();
     navigate("/" + page.id);
 
-    if (!isSelected) {
-      setExpanded(!isExpanded);
-    }
+    setExpanded(!isExpanded);
   };
 
   const isExpandable = !!page.pages;
