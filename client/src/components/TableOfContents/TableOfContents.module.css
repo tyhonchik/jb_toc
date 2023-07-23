@@ -1,0 +1,52 @@
+a[role="treeitem"] {
+  color: inherit; /* Inherit the color from the parent element */
+  text-decoration: none; /* Remove underline */
+  display: inherit;
+  padding-inline-end: 32px;
+  margin-inline-end: -32px;
+  margin-block: -8px;
+  padding-block: 8px;
+}
+
+li {
+  padding-block: 8px;
+}
+
+li:has(> ul) {
+  padding-block: 8px 0;
+}
+
+li:has(> ul) > ul {
+  padding-block-start: 8px;
+}
+
+li:hover a[role="treeitem"]:hover {
+  display: inherit;
+  background-color: #e9e9ea;
+}
+
+.tree,
+.tree-node {
+  padding-inline-start: 16px;
+}
+
+/* Hide the default list marker */
+.tree ul,
+.tree li {
+  list-style: none;
+  position: relative;
+}
+
+/* Add the triangle marker to expandable elements */
+.tree [role="treeitem"][aria-expanded]::before {
+  content: "▶";
+  display: inline-block;
+  margin-inline: -15px 6px;
+  font-size: 10px;
+  transition: transform 0.1s ease-in-out;
+}
+
+/* Change the direction of the triangle marker when expanded */
+.tree [role="treeitem"][aria-expanded="true"]::before {
+  transform: rotate(90deg);
+}

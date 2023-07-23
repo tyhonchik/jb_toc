@@ -1,0 +1,58 @@
+main {
+  color: #333;
+  font-weight: 400;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  background-color: #eee;
+  padding: 10px 30px;
+  max-height: 80px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.logo {
+  max-height: 100%;
+  max-width: fit-content;
+}
+
+.layout {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  flex: 1;
+}
+
+.layout > :first-child {
+  flex: 0 0 280px;
+  overflow-y: scroll;
+  height: 100%;
+  border-right: 1px solid #e6e6e6;
+  padding-inline: 32px;
+  padding-block: 24px;
+  font-size: 14px;
+}
+
+.content {
+  flex-grow: 1;
+}
+
+.content > .main-content {
+  overflow-y: scroll;
+  padding: 32px;
+  min-height: calc(100% - 80px);
+}
+
+.footer {
+  border-top: 1px solid #e6e6e6;
+  padding: 10px;
+  max-height: 60px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: calc(100% - 280px);
+}

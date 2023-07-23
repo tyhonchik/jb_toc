@@ -1,11 +1,10 @@
-import Logo from "@/assets/logo.png";
+import { DataProvider } from "./containers/DataContext";
+import { MainPage } from "./pages/MainPage";
 
-import styles from "./App.module.css";
+const App = () => (
+  <DataProvider>
+    <MainPage />
+  </DataProvider>
+);
 
-export default function App() {
-  return (
-    <main className={styles.main}>
-      <img className={styles.logo} alt="React logo" width="400px" src={Logo} />
-    </main>
-  );
-}
+export default App;

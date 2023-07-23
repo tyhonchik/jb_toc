@@ -62,3 +62,7 @@ h6 {
 }
 
 /* END - CSS Reset */
+
+body {
+  font-family: "Roboto", sans-serif;
+}
