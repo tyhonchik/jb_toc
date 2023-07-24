@@ -1,13 +1,20 @@
+/* Global styles */
+/* Set default text color and font weight */
 main {
   color: #333;
   font-weight: 400;
 }
+
+/* Container styles */
+/* Flex container with column direction that takes full viewport height */
 .container {
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
 
+/* Header styles */
+/* Header with background color, padding, and a maximum height */
 .header {
   background-color: #eee;
   padding: 10px 30px;
@@ -15,11 +22,15 @@ main {
   border-bottom: 1px solid #e6e6e6;
 }
 
+/* Logo styles */
+/* Logo with a maximum height and width that fits the content */
 .logo {
   max-height: 100%;
   max-width: fit-content;
 }
 
+/* Layout styles */
+/* Flex layout with row direction and hidden overflow */
 .layout {
   display: flex;
   flex-direction: row;
@@ -27,6 +38,8 @@ main {
   flex: 1;
 }
 
+/* First child of the layout (sidebar) styles */
+/* Sidebar with fixed width, scrollable content, border, padding, and font size */
 .layout > :first-child {
   flex: 0 0 280px;
   overflow-y: scroll;
@@ -37,16 +50,22 @@ main {
   font-size: 14px;
 }
 
+/* Content styles */
+/* Flex content area that grows to fill remaining space */
 .content {
   flex-grow: 1;
 }
 
+/* Main content area within the content styles */
+/* Scrollable main content area with padding and minimum height */
 .content > .main-content {
   overflow-y: scroll;
   padding: 32px;
   min-height: calc(100% - 80px);
 }
 
+/* Footer styles */
+/* Footer with border, padding, maximum height, centered text, fixed position at the bottom, and width calculated to fill remaining space after the sidebar */
 .footer {
   border-top: 1px solid #e6e6e6;
   padding: 10px;

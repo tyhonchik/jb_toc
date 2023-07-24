@@ -1,27 +1,27 @@
-'use strict'
+"use strict";
 
-const { test } = require('tap')
-const { build } = require('../helper')
+const { test } = require("tap");
+const { build } = require("../helper");
+const path = require("path");
+const fs = require("fs").promises;
 
-test('default root route', async (t) => {
-  const app = await build(t)
+test("default root route", async (t) => {
+  const app = await build(t);
 
-  const res = await app.inject({
-    url: '/'
-  })
-  t.same(JSON.parse(res.payload), { root: true })
-})
+  // Read the expected data from the data.json file
+  const dataPath = path.join(__dirname, "../../routes", "data.json");
+  const expectedData = JSON.parse(await fs.readFile(dataPath));
 
-// inject callback style:
-//
-// test('default root route', (t) => {
-//   t.plan(2)
-//   const app = await build(t)
-//
-//   app.inject({
-//     url: '/'
-//   }, (err, res) => {
-//     t.error(err)
-//     t.same(JSON.parse(res.payload), { root: true })
-//   })
-// })
+  // Perform the test
+  const response = await app.inject({
+    method: "GET",
+    url: "/api/data",
+  });
+
+  t.equal(response.statusCode, 200, "Status code should be 200");
+  t.same(
+    JSON.parse(response.payload),
+    expectedData,
+    "Data should match the expected data"
+  );
+});

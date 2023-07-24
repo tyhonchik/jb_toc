@@ -1,0 +1,12 @@
+/* Styles for anchors in tree nodes */
+li > .anchors {
+  display: inherit;
+  background-color: #f3f3f3;
+  padding-inline-end: 32px;
+  margin-inline-end: -32px;
+}
+
+li > .anchors .anchor:hover {
+  display: inherit;
+  background-color: #e9e9ea;
+}

@@ -1,3 +1,4 @@
+/* General styles for links */
 a {
   color: inherit; /* Inherit the color from the parent element */
   text-decoration: none; /* Remove underline */
@@ -8,10 +9,12 @@ a {
   padding-block: 8px;
 }
 
+/* Selected tree item styles */
 a[role="treeitem"][aria-selected="true"] {
   font-weight: 600;
 }
 
+/* Styles for anchors in tree nodes */
 li > .anchors {
   display: inherit;
   background-color: #f3f3f3;
@@ -24,10 +27,12 @@ li > .anchors .anchor:hover {
   background-color: #e9e9ea;
 }
 
+/* List item styles */
 li {
   padding-block: 8px;
 }
 
+/* Styles for expandable tree nodes */
 li:has(> ul) {
   padding-block: 8px 0;
 }
@@ -36,11 +41,13 @@ li:has(> ul) > ul {
   padding-block-start: 8px;
 }
 
+/* Hover styles for tree items */
 li:hover a[role="treeitem"]:hover {
   display: inherit;
   background-color: #e9e9ea;
 }
 
+/* Tree and tree node styles */
 .tree,
 .tree-node {
   padding-inline-start: 16px;

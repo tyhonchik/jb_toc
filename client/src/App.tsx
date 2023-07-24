@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import { DataProvider } from "./containers/DataContext";
-import { MainPage } from "./pages/MainPage";
+import MainPage from "./pages/MainPage";
 
 const App = () => (
   <Router>

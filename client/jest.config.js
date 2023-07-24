@@ -10,7 +10,7 @@ module.exports = {
 
   // The glob patterns Jest uses to detect test files.
   // https://jestjs.io/docs/configuration#testmatch-arraystring
-  testMatch: ["**/*.spec.ts?(x)"],
+  testMatch: ["**/*.(test|spec).ts?(x)"],
 
   // Jest transformations
   // https://jestjs.io/docs/configuration#transform-objectstring-pathtotransformer--pathtotransformer-object

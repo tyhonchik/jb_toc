@@ -7,9 +7,7 @@
     "format": "prettier . --write --ignore-path .gitignore && git update-index --again",
     "lint": "eslint . --ext .ts,.tsx --fix --ignore-path .gitignore",
     "serve": "npm run build && vite preview --port 3000",
-    "test:unit": "jest --watch",
-    "test:unit:ci": "jest",
-    "test:unit:coverage": "jest --silent --watchAll=false --coverage",
+    "test": "jest",
     "typecheck": "tsc --noEmit"
   },
   "lint-staged": {
